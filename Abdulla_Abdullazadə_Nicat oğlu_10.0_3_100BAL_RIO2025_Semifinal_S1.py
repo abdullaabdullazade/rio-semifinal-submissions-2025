@@ -1,12 +1,15 @@
-l, r = map(int,input().split())
-for  i in range(l, r+1):
-    k = i
-    s = 0
-    while k > 0:
-        a = k % 10
-        s = s * 10 + a
-        k = k // 10
-    if s == i:
+l,r = map(int,input().split())
+
+for i in range(l,r+1):
+    len_i = len(str(i))
+    str_i = list(str(i))
+
+    
+    str_i = "".join(reversed(str_i))
+    
+
+
+    if  str(i)==str_i:
         print("Palindrome!")
-    else:
+    else: 
         print(i)
