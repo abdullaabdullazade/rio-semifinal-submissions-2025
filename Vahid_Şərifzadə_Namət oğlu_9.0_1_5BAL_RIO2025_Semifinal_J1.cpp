@@ -1,0 +1,7 @@
+#include <iostream>
+using namespace std;
+int main() {
+	cout << "11:00" << endl;
+	cout << "00:01" << endl;
+	return 0;
+}

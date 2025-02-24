@@ -1,0 +1,102 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+/*
+ll maxi = 202020;
+ll gcd(ll x, ll y)
+{
+    if (x==0)
+        return y;
+    return gcd(x%y, x);
+}
+vector<vector<ll>>g(maxi);
+vector<ll>vis(maxi, 0);
+void dfs(ll x)
+{
+    vis[x]=1;
+    for (auto i:g[x])
+    {
+        if (vis[i]==0)
+            dfs(i);
+    }
+}*/
+string pluss (string s)
+{
+    char ch=s[s.size()-1];
+    if (ch!='9')
+    {
+        int eded = ch+'0';
+        eded++;
+        ch = eded-'0';
+        s[s.size()-1]= ch;
+        return s;
+    }
+    else
+    {
+        string scopy = s;
+        reverse(scopy.begin(), scopy.end());
+        bool bul =false;
+        for (int i=0 ; i<scopy.size() ; i++)
+        {
+            if (scopy[i]!='9')
+            {
+                int eded =scopy[i]+'0';
+                eded++;
+                char ch = eded-'0';
+                scopy[i]= ch;
+                bul = true;
+                break;
+            }
+            else
+            {
+                scopy[i]='0';
+            }
+        }
+        if (bul!=true)
+        {
+            scopy = scopy+"1";
+        }
+        reverse(scopy.begin(), scopy.end());
+        return scopy;
+    }
+}
+bool isp(string s)
+{
+    string sr = s;
+    reverse(sr.begin(), sr.end());
+    if (sr==s)
+        return true;
+    else
+        return false;
+}
+void solve()
+{
+    string l,r;
+    cin>>l>>r;
+    r = pluss(r);
+    while(l!=r)
+    {
+        if (isp(l))
+        {
+            cout<<"Palindrome!"<<endl;
+        }
+        else
+            cout<<l<<endl;
+        l = pluss(l);
+    }
+    /*ll n,m;
+    cin>>n>>m;
+    for (int i=0 ; i<m ; i++)
+    {
+        ll x,y;
+        cin>>x>>y;
+        g[x].push_back(y);
+    }
+    dfs(1);
+    for (int i=1 ; i<=n ;i++)
+        cout<<vis[i]<<" ";*/
+}
+int main()
+{
+    solve();
+}

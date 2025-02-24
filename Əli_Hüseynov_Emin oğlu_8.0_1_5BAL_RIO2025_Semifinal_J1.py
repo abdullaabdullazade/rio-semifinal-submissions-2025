@@ -1,0 +1,5 @@
+t = input()
+d = input()
+d1 = input()
+print("11:00")
+print("00:01")

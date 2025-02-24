@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+#define ll long long
+#define endl '\n'
+
+
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    string s,a;
+    long long l,r;
+    cin >>l>>r;
+    for(long long i=l; i<=r;i++){
+        s= to_string(i);
+        a=s;
+        reverse(a.begin(), a.end());
+        if(s==a ){
+
+            cout<<"Palindrome!"<<endl;
+
+        }
+        else cout<<s<<endl;
+
+
+    }
+
+
+    return 0;
+}
+
